@@ -38,12 +38,13 @@ public class MessageController {
     }
 
     @GetMapping("/getByTime")
-    public @ResponseBody Set<String> getByTime(@RequestParam("start")
-                            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-                            LocalDateTime start,
-                                  @RequestParam
-                            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-                            LocalDateTime end
+    public @ResponseBody Set<String> getByTime(
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+            LocalDateTime start,
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+            LocalDateTime end
     ) {
         Long startTimestamp = start.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         Long endTimestamp = end.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();

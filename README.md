@@ -1,6 +1,6 @@
 - To launch whole solution just execute two commands
 
-`mvn clean package`
+`mvn clean package` \
 `docker-compose up -d`
 
 - Available REST endpoints
